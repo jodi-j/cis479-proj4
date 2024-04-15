@@ -38,4 +38,4 @@ dot_data = tree.export_graphviz(dtree, out_file=None,
                                 class_names=('0','1'),
                                 filled=True)
 graph = graphviz.Source(dot_data, format="png")
-graph.render('balloons_dt', view=True)
+graph.render('overdrawn_dt', view=True)
