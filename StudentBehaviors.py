@@ -39,3 +39,18 @@ dot_data = tree.export_graphviz(dtree, out_file=None,
                                 filled=True)
 graph = graphviz.Source(dot_data, format="png")
 graph.render('overdrawn_dt', view=True)
+
+#Query 1: Predict whether a 20-year-old male student who has drunk alcohol for 10 days in the past 30 days will overdraw a checking account.
+print("Prediction 1: Will the student overdraw a checking account?")
+
+#Query 2:Predict whether a 25-year-old female student who has drunk alcohol for 5 days in the past 30 days will overdraw a checking account.
+print("Prediction 2: Will the student overdraw a checking account?")
+
+#Query 3: Predict whether a 19-year-old male student who has drunk alcohol for 20 days in the past 30 days will overdraw a checking account.
+print("Prediction 3: Will the student overdraw a checking account?")
+
+#Query 4: Predict whether a 22-year-old female student who has drunk alcohol for 15 days in the past 30 days will overdraw a checking account.
+print("Prediction 4: Will the student overdraw a checking account?")
+
+#Query 5: Predict whether a 21-year-old male student who has drunk alcohol for 20 days in the past 30 days will overdraw a checking account.
+print("Prediction 5: Will the student overdraw a checking account?")
