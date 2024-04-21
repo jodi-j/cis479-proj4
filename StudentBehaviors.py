@@ -15,9 +15,6 @@ for col in over_df.columns:
     labels, uniques = pd.factorize(over_df[col])
     over_df[col] = labels
 
-X = over_df.drop(columns='Overdrawn')
-y = over_df['Overdrawn']
-
 # Change DaysDrink into categorical data
 conditions = [
     (over_df['DaysDrink'] < 7),
@@ -26,6 +23,9 @@ conditions = [
 ]
 categories = [0, 2, 1]
 convert_categorical(over_df, 'DaysDrink', conditions, categories)
+X = over_df.drop(columns='Overdrawn')
+y = over_df['Overdrawn']
+
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
@@ -34,7 +34,6 @@ dtree.fit(X_train, y_train)
 predictions = dtree.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, predictions))
 print("Confusion Matrix:\n", confusion_matrix(y_test, predictions))
-
 dot_data = export_graphviz(dtree, out_file=None,
                            feature_names=('Age', 'Sex', 'DaysDrink'),
                            class_names=('0', '1'),
